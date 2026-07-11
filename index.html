@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>每日微光儀式 - 療癒閉環版</title>
     <style>
+      /* 1. 取消所有元素點擊時的藍色反光/反白效果 */
+      * {
+          -webkit-tap-highlight-color: transparent; /* 取消 iOS/Android 預設的點擊高亮 */
+          -webkit-touch-callout: none;              /* 取消長按彈出的選單 */
+          user-select: none;                        /* 禁止文字被選取 */
+          -webkit-user-select: none;                /* Safari 專用 */
+      }
+
+      /* 2. 針對按鈕與點擊目標，取消聚焦框 (focus outline) */
+      button, .circle, .glow-node {
+          outline: none;
+          -webkit-tap-highlight-color: transparent;
+      }
         body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: "PingFang TC", sans-serif; background-color: #111; transition: background-color 0.5s ease; }
         .screen { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; position: absolute; width: 100%; transition: opacity 0.8s ease; }
         .hidden { opacity: 0; pointer-events: none; }
